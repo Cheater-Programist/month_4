@@ -1,6 +1,8 @@
 from django.apps import AppConfig
 
 
-class KaniConfig(AppConfig):
+class BaseConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.kani'
+    name = 'apps.base'
+    verbose_name = 'Main settings'
+

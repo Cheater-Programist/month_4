@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 
@@ -11,22 +12,22 @@
     <title>Gerold - Personal Portfolio HTML5 Template</title>
 
     <!-- Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" href="./assets/img/favicon.png" />
-    <link rel="shortcut icon" type="image/png" href="./assets/img/favicon.png" />
+    <link rel="apple-touch-icon" href="{% static 'assets/img/favicon.png' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'assets/img/favicon.png' %}" />
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css">
-    <link rel="stylesheet" href="assets/css/flaticon_gerold.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/backToTop.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/font-awesome-pro.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon_gerold.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/backToTop.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/odometer-theme-default.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
 
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
 </head>
 
 <body>
@@ -60,100 +61,8 @@
     </div>
     <!-- end: Back To Top -->
 
-    <!-- HEADER START -->
-    <header class="tj-header-area header-absolute">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex flex-wrap align-items-center">
+    {% include 'include/header.html' %}
 
-                    <div class="logo-box">
-                        <a href="index.html">
-                            <img src="assets/img/logo/logo.png" alt="">
-                        </a>
-                    </div>
-
-                    <div class="header-info-list d-none d-md-inline-block">
-                        <ul class="ul-reset">
-                            <li><a href="mailto:mail@gerolddesign.com">mail@gerolddesign.com</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="header-menu">
-                        <nav>
-                            <ul>
-                                <li><a href="#services-section">Services</a></li>
-                                <li><a href="#works-section">Works</a></li>
-                                <li><a href="#resume-section">Resume</a></li>
-                                <li><a href="#skills-section">Skills</a></li>
-                                <li><a href="#testimonials-section">Testimonials</a></li>
-                                <li><a href="#contact-section">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-
-                    <div class="header-button">
-                        <a href="#" class="btn tj-btn-primary">Hire me!</a>
-                    </div>
-
-                    <div class="menu-bar d-lg-none">
-                        <button>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <header class="tj-header-area header-2 header-sticky sticky-out">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex flex-wrap align-items-center">
-
-                    <div class="logo-box">
-                        <a href="index.html">
-                            <img src="assets/img/logo/logo.png" alt="">
-                        </a>
-                    </div>
-
-                    <div class="header-info-list d-none d-md-inline-block">
-                        <ul class="ul-reset">
-                            <li><a href="mailto:mail@gerolddesign.com">mail@gerolddesign.com</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="header-menu">
-                        <nav>
-                            <ul>
-                                <li><a href="#services-section">Services</a></li>
-                                <li><a href="#works-section">Works</a></li>
-                                <li><a href="#resume-section">Resume</a></li>
-                                <li><a href="#skills-section">Skills</a></li>
-                                <li><a href="#testimonials-section">Testimonials</a></li>
-                                <li><a href="#contact-section">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-
-                    <div class="header-button">
-                        <a href="#" class="btn tj-btn-primary">Hire me!</a>
-                    </div>
-
-                    <div class="menu-bar d-lg-none">
-                        <button>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- HEADER END -->
 
     <main class="site-content" id="content">
         <!-- HERO SECTION START -->
@@ -161,7 +70,7 @@
             <div class="intro_text">
                 <svg viewBox="0 0 1320 300">
                     <text x="50%" Y="50%" text-anchor="middle">
-                        HI
+                        I LOVE YOU
                     </text>
                 </svg>
             </div>
@@ -169,31 +78,30 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="hero-content-box">
-                            <span class="hero-sub-title">I am Gerold</span>
-                            <h1 class="hero-title">Web Developer +<br>UX Designer
+                            <span class="hero-sub-title">I am {{infouser.name}}</span>
+                            <h1 class="hero-title">{{infouser.work}}<br>UX Designer
                             </h1>
 
                             <div class="hero-image-box d-md-none text-center">
-                                <img src="assets/img/hero/me.png" alt="">
+                                <img src="{{infouser.image.url}}" alt="">
                             </div>
 
-                            <p class="lead">I break down complex user experinece
-                                problems to create integritiy focussed solutions that connect billions of people</p>
+                            <p class="lead">{{infouser.description}}</p>
                             <div class="button-box d-flex flex-wrap align-items-center">
                                 <a href="#" class="btn tj-btn-secondary">Download
                                     CV</a>
                                 <ul class="ul-reset social-icons">
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-light fa-basketball"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                                    <li><a href="{{infouser.youtube}}"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="{{infouser.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="{{infouser.whatsapp}}"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    <li><a href="{{infouser.telegram}}"><i class="fa-brands fa-telegram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 d-none d-md-block">
                         <div class="hero-image-box text-center">
-                            <img src="assets/img/hero/me.png" alt="">
+                            <img src="{{infouser.image.url}}" width="350px" alt="">
                         </div>
                     </div>
                 </div>
@@ -315,7 +223,7 @@
         <!-- start: Service Popup -->
         <div id="service-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide">
             <div class="popup_modal_img">
-                <img src="./assets/img/services/modal-img.jpg" alt="">
+                <img src="{% static 'assets/img/services/modal-img.jpg' %}" alt="">
             </div>
 
             <div class="popup_modal_content">
@@ -466,7 +374,7 @@
                             <div class="gutter-sizer"></div>
                             <div class="portfolio-item branding">
                                 <div class="image-box">
-                                    <img src="assets/img/portfolio/2.jpg" alt="">
+                                    <img src="{% static 'assets/img/portfolio/2.jpg' %}" alt="">
                                 </div>
                                 <div class="content-box">
                                     <h3 class="portfolio-title">Deloitte</h3>
@@ -478,7 +386,7 @@
                             </div>
                             <div class="portfolio-item uxui">
                                 <div class="image-box">
-                                    <img src="assets/img/portfolio/1.jpg" alt="">
+                                    <img src="{% static 'assets/img/portfolio/1.jpg' %}" alt="">
                                 </div>
                                 <div class="content-box">
                                     <h3 class="portfolio-title">New Age</h3>
@@ -490,7 +398,7 @@
                             </div>
                             <div class="portfolio-item mobile-app">
                                 <div class="image-box">
-                                    <img src="assets/img/portfolio/3.jpg" alt="">
+                                    <img src="{% static 'assets/img/portfolio/3.jpg' %}" alt="">
                                 </div>
                                 <div class="content-box">
                                     <h3 class="portfolio-title">Sebastian</h3>
@@ -502,7 +410,7 @@
                             </div>
                             <div class="portfolio-item branding">
                                 <div class="image-box">
-                                    <img src="assets/img/portfolio/4.jpg" alt="">
+                                    <img src="{% static 'assets/img/portfolio/4.jpg' %}" alt="">
                                 </div>
                                 <div class="content-box">
                                     <h3 class="portfolio-title">Mochnix</h3>
@@ -522,7 +430,7 @@
         <!-- start: Portfolio Popup -->
         <div id="portfolio-wrapper" class="popup_content_area zoom-anim-dialog mfp-hide">
             <div class="popup_modal_img">
-                <img src="./assets/img/portfolio/modal-img.jpg" alt="">
+                <img src="{% static 'assets/img/portfolio/modal-img.jpg' %}" alt="">
             </div>
 
             <div class="popup_modal_content">
@@ -558,16 +466,16 @@
 
                 <div class="portfolio_gallery owl-carousel">
                     <div class="gallery_item">
-                        <img src="./assets/img/portfolio-gallery/p-gallery-1.jpg" alt="">
+                        <img src="{% static 'assets/img/portfolio-gallery/p-gallery-1.jpg' %}" alt="">
                     </div>
                     <div class="gallery_item">
-                        <img src="./assets/img/portfolio-gallery/p-gallery-2.jpg" alt="">
+                        <img src="{% static 'assets/img/portfolio-gallery/p-gallery-2.jpg' %}" alt="">
                     </div>
                     <div class="gallery_item">
-                        <img src="./assets/img/portfolio-gallery/p-gallery-3.jpg" alt="">
+                        <img src="{% static 'assets/img/portfolio-gallery/p-gallery-3.jpg' %}" alt="">
                     </div>
                     <div class="gallery_item">
-                        <img src="./assets/img/portfolio-gallery/p-gallery-4.jpg" alt="">
+                        <img src="{% static 'assets/img/portfolio-gallery/p-gallery-4.jpg' %}" alt="">
                     </div>
                 </div>
 
@@ -773,7 +681,7 @@
                             <div class="skill-item wow fadeInUp" data-wow-delay=".3s">
                                 <div class="skill-inner">
                                     <div class="icon-box">
-                                        <img src="assets/img/icons/figma.svg" alt="">
+                                        <img src="{% static 'assets/img/icons/figma.svg' %}" alt="">
                                     </div>
                                     <div class="number">92%</div>
                                 </div>
@@ -782,7 +690,7 @@
                             <div class="skill-item wow fadeInUp" data-wow-delay=".4s">
                                 <div class="skill-inner">
                                     <div class="icon-box">
-                                        <img src="assets/img/icons/sketch.svg" alt="">
+                                        <img src="{% static 'assets/img/icons/sketch.svg' %}" alt="">
                                     </div>
                                     <div class="number">80%</div>
                                 </div>
@@ -791,7 +699,7 @@
                             <div class="skill-item wow fadeInUp" data-wow-delay=".5s">
                                 <div class="skill-inner">
                                     <div class="icon-box">
-                                        <img src="assets/img/icons/xd.svg" alt="">
+                                        <img src="{% static 'assets/img/icons/xd.svg' %}" alt="">
                                     </div>
                                     <div class="number">85%</div>
                                 </div>
@@ -800,7 +708,7 @@
                             <div class="skill-item wow fadeInUp" data-wow-delay=".6s">
                                 <div class="skill-inner">
                                     <div class="icon-box">
-                                        <img src="assets/img/icons/wp.svg" alt="">
+                                        <img src="{% static 'assets/img/icons/wp.svg' %}" alt="">
                                     </div>
                                     <div class="number">99%</div>
                                 </div>
@@ -809,7 +717,7 @@
                             <div class="skill-item wow fadeInUp" data-wow-delay=".7s">
                                 <div class="skill-inner">
                                     <div class="icon-box">
-                                        <img src="assets/img/icons/react.svg" alt="">
+                                        <img src="{% static 'assets/img/icons/react.svg' %}" alt="">
                                     </div>
                                     <div class="number">89%</div>
                                 </div>
@@ -818,7 +726,7 @@
                             <div class="skill-item wow fadeInUp" data-wow-delay=".8s">
                                 <div class="skill-inner">
                                     <div class="icon-box">
-                                        <img src="assets/img/icons/js.svg" alt="">
+                                        <img src="{% static 'assets/img/icons/js.svg' %}" alt="">
                                     </div>
                                     <div class="number">93%</div>
                                 </div>
@@ -849,10 +757,10 @@
                                 <div class="testimonial-item">
                                     <div class="top-area d-flex flex-wrap justify-content-between">
                                         <div class="logo-box">
-                                            <img src="assets/img/testimonials/logo/1.png" alt="">
+                                            <img src="{% static 'assets/img/testimonials/logo/1.png' %}" alt="">
                                         </div>
                                         <div class="image-box">
-                                            <img src="assets/img/testimonials/user/1.jpg" alt="">
+                                            <img src="{% static 'assets/img/testimonials/user/1.jpg' %}" alt="">
                                         </div>
                                     </div>
                                     <div class="icon-box">
@@ -893,10 +801,10 @@
                                 <div class="testimonial-item">
                                     <div class="top-area d-flex flex-wrap justify-content-between">
                                         <div class="logo-box">
-                                            <img src="assets/img/testimonials/logo/2.png" alt="">
+                                            <img src="{% static 'assets/img/testimonials/logo/2.png' %}" alt="">
                                         </div>
                                         <div class="image-box">
-                                            <img src="assets/img/testimonials/user/2.jpg" alt="">
+                                            <img src="{% static 'assets/img/testimonials/user/2.jpg' %}" alt="">
                                         </div>
                                     </div>
                                     <div class="icon-box">
@@ -937,10 +845,10 @@
                                 <div class="testimonial-item">
                                     <div class="top-area d-flex flex-wrap justify-content-between">
                                         <div class="logo-box">
-                                            <img src="assets/img/testimonials/logo/1.png" alt="">
+                                            <img src="{% static 'assets/img/testimonials/logo/1.png' %}" alt="">
                                         </div>
                                         <div class="image-box">
-                                            <img src="assets/img/testimonials/user/1.jpg" alt="">
+                                            <img src="{% static 'assets/img/testimonials/user/1.jpg' %}" alt="">
                                         </div>
                                     </div>
                                     <div class="icon-box">
@@ -981,10 +889,10 @@
                                 <div class="testimonial-item">
                                     <div class="top-area d-flex flex-wrap justify-content-between">
                                         <div class="logo-box">
-                                            <img src="assets/img/testimonials/logo/2.png" alt="">
+                                            <img src="{% static 'assets/img/testimonials/logo/2.png' %}" alt="">
                                         </div>
                                         <div class="image-box">
-                                            <img src="assets/img/testimonials/user/2.jpg" alt="">
+                                            <img src="{% static 'assets/img/testimonials/user/2.jpg' %}" alt="">
                                         </div>
                                     </div>
                                     <div class="icon-box">
@@ -1049,7 +957,7 @@
                         <div class="blog-item wow fadeInUp" data-wow-delay=".5s">
                             <div class="blog-thumb">
                                 <a href="blog-details.html">
-                                    <img src="assets/img/blog/1.jpg" alt="">
+                                    <img src="{% static 'assets/img/blog/1.jpg' %}" alt="">
                                 </a>
                                 <a href="#" class="category">Tutorial</a>
                             </div>
@@ -1069,7 +977,7 @@
                         <div class="blog-item wow fadeInUp" data-wow-delay=".6s">
                             <div class="blog-thumb">
                                 <a href="blog-details.html">
-                                    <img src="assets/img/blog/2.jpg" alt="">
+                                    <img src="{% static 'assets/img/blog/2.jpg' %}" alt="">
                                 </a>
                                 <a href="#" class="category">TIPS</a>
                             </div>
@@ -1088,7 +996,7 @@
                         <div class="blog-item wow fadeInUp" data-wow-delay=".7s">
                             <div class="blog-thumb">
                                 <a href="blog-details.html">
-                                    <img src="assets/img/blog/3.jpg" alt="">
+                                    <img src="{% static 'assets/img/blog/3.jpg' %}" alt="">
                                 </a>
                                 <a href="#" class="category">FREEBIES</a>
                             </div>
@@ -1217,53 +1125,26 @@
         <!-- CONTACT SECTION END -->
     </main>
 
-    <!-- FOOTER AREA START -->
-    <footer class="tj-footer-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="footer-logo-box">
-                        <a href="#"><img src="assets/img/logo/logo.png" alt=""></a>
-                    </div>
-                    <div class="footer-menu">
-                        <nav>
-                            <ul>
-                                <li><a href="#services-section">Services</a></li>
-                                <li><a href="#works-section">Works</a></li>
-                                <li><a href="#resume-section">Resume</a></li>
-                                <li><a href="#skills-section">Skills</a></li>
-                                <li><a href="#testimonials-section">Testimonials</a></li>
-                                <li><a href="#contact-section">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="copy-text">
-                        <p>&copy; 2024 All rights reserved by <a href="#" target="_blank">ThemeJunction</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- FOOTER AREA END -->
+    {% include 'include/footer.html' %}
 
 
     <!-- CSS here -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/nice-select.min.js"></script>
-    <script src="assets/js/backToTop.js"></script>
-    <script src="assets/js/smooth-scroll.js"></script>
-    <script src="assets/js/appear.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/one-page-nav.js"></script>
-    <script src="assets/js/lightcase.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
-    <script src="assets/js/magnific-popup.js"></script>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/backToTop.js' %}"></script>
+    <script src="{% static 'assets/js/smooth-scroll.js' %}"></script>
+    <script src="{% static 'assets/js/appear.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap.min.js' %}"></script>
+    <script src="{% static 'assets/js/one-page-nav.js' %}"></script>
+    <script src="{% static 'assets/js/lightcase.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.js' %}"></script>
 
-    <script src="assets/js/main.js"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
 </body>
 
 </html>
