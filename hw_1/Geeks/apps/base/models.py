@@ -12,11 +12,11 @@ class UserInfo(models.Model):
     email = models.EmailField(verbose_name = 'user email')
     address = models.CharField(max_length = 255, verbose_name = 'user address')
     location = models.CharField(max_length = 255, verbose_name = 'user location')
-    youtube = models.URLField(verbose_name = 'YouTube')
-    instagram = models.URLField(verbose_name = 'Instagram')
-    whatsapp = models.URLField(verbose_name = 'Whatsapp')
-    telegram = models.URLField(verbose_name = 'Telegram')
+    twitter = models.URLField(verbose_name = 'Twitter')
     facebook = models.URLField(verbose_name = 'Facebook')
+    linkedin = models.URLField(verbose_name = 'Linkedin')
+    github = models.URLField(verbose_name = 'Github')
+    instagram = models.URLField(verbose_name = 'Instagram')
 
     def __str__(self) -> str:
         return f"{self.name} {self.lastname}"
