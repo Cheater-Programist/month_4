@@ -133,7 +133,7 @@
                           <p>{{userinfo.age}}</p>
                         </div>
                         <div class="col-12 col-md-6 single-info"><span>From:</span>
-                          <p>{{userinfo.adress}}</p>
+                          <p>{{userinfo.address}}</p>
                         </div>
                       </div>
                     </address>
@@ -161,50 +161,19 @@
                 </div>
               </div>
               <div class="row">
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-logo-css3"></i>
-                    <h6 class="service-title">Design Trends</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
+                {% for service in service %}
                 <!-- Single service-->
                 <div class="col-12 col-md-6 col-lg-4">
                   <div class="single-service"><i class="icon service-icon ion-md-images"></i>
-                    <h6 class="service-title">PSD Design</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <h6 class="service-title">{{service.title}}</h6>
+                    <p class="service-description">{{service.description}}</p>
                   </div>
                 </div>
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-logo-ionic"></i>
-                    <h6 class="service-title">Customer Support</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-logo-wordpress"></i>
-                    <h6 class="service-title">Web Development</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-md-move"></i>
-                    <h6 class="service-title">Fully Responsive</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
-                <!-- Single service-->
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service"><i class="icon service-icon ion-ios-rocket"></i>
-                    <h6 class="service-title">Branding</h6>
-                    <p class="service-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
+
+            
             <!-- Testimonials section-->
             <div class="testimonials-section single-section">
               <div class="row">
@@ -216,51 +185,23 @@
                 </div>
               </div>
               <div class="my-slider">
-                <div class="slider-item">
+                <div class="slider-item" >
                   <!-- Single review-->
-                  <div class="single-review swiper-slide">
+                  {% for testimonials in testimonials %}
+                  <div class="single-review swiper-slide" >
                     <div class="review-header d-flex justify-content-between">
                       <div class="review-client">
-                        <div class="media"><img class="img-fluid rounded-circle client-avatar" src="{% static 'img/client-1.jpg' %}" alt="Client">
+                        <div class="media"><img class="img-fluid rounded-circle client-avatar" src="{{testimonials.image.url}}" alt="Client">
                           <div class="client-details">
-                            <h6 class="client-name">Julia Sakura</h6><span class="client-role">Envato Customer</span>
+                            <h6 class="client-name">{{testimonials.fullname}}</h6><span class="client-role">{{testimonials.job}}</span>
                           </div>
                         </div>
                       </div><i class="icon ion-md-quote review-icon"></i>
                     </div>
-                    <p class="review-content">Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
+                    <p class="review-content">{{testimonials.testimonial}}</p>
                   </div>
                 </div>
-                <div class="slider-item">
-                  <!-- Single review-->
-                  <div class="single-review swiper-slide">
-                    <div class="review-header d-flex justify-content-between">
-                      <div class="review-client">
-                        <div class="media"><img class="img-fluid rounded-circle client-avatar" src="{% static 'img/client-2.jpg' %}" alt="Client">
-                          <div class="client-details">
-                            <h6 class="client-name">John Santana</h6><span class="client-role">Entrepreneur</span>
-                          </div>
-                        </div>
-                      </div><i class="icon ion-md-quote review-icon"></i>
-                    </div>
-                    <p class="review-content">Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
-                  </div>
-                </div>
-                <div class="slider-item">
-                  <!-- Single review-->
-                  <div class="single-review swiper-slide">
-                    <div class="review-header d-flex justify-content-between">
-                      <div class="review-client">
-                        <div class="media"><img class="img-fluid rounded-circle client-avatar" src="{% static 'img/client-3.jpg' %}" alt="Client">
-                          <div class="client-details">
-                            <h6 class="client-name">Maria Wilson</h6><span class="client-role">Envato Customer</span>
-                          </div>
-                        </div>
-                      </div><i class="icon ion-md-quote review-icon"></i>
-                    </div>
-                    <p class="review-content">Emma did an excellent creative job, addressing our request quickly, and also providing her own graphic insight, being open to feedback and changes or edits when they arose. She worked with us the entire way. Highly recommended.</p>
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
             <!-- Pricing section-->
@@ -348,36 +289,24 @@
                 <div class="col-12 col-md-6">
                   <div class="col-block education">
                     <h3 class="col-title">Education</h3>
+                    {% for educations in educations %}
                     <div class="resume-item"><span class="item-arrow"></span>
-                      <h5 class="item-title">Computer Science</h5><span class="item-details">Cambridge University / 2004 - 2007</span>
-                      <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
+                      <h5 class="item-title">{{educations.title}}</h5><span class="item-details">{{educations.place}} / {{educations.year}}</span>
+                      <p class="item-description">{{educations.subtitle}}</p>
                     </div>
-                    <div class="resume-item"><span class="item-arrow"></span>
-                      <h5 class="item-title">Bachelor Degree</h5><span class="item-details">University of Tokyo / 2008 - 2010</span>
-                      <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
-                    </div>
-                    <div class="resume-item"><span class="item-arrow"></span>
-                      <h5 class="item-title">Master Degree</h5><span class="item-details">Harvard University / 2012 - 2015</span>
-                      <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
-                    </div>
+                    {% endfor %}  
                   </div>
                 </div>
                 <!-- Experience part-->
                 <div class="col-12 col-md-6">
                   <div class="col-block experience">
                     <h3 class="col-title">Experience</h3>
+                    {% for experience in experience %}
                     <div class="resume-item"><span class="item-arrow"></span>
-                      <h5 class="item-title">Software Engineer</h5><span class="item-details">Adobe / 2015 - 2017</span>
-                      <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
+                      <h5 class="item-title">{{experience.title}}</h5><span class="item-details">{{experience.place}} / {{experience.year}}</span>
+                      <p class="item-description">{{experience.subtitle}}</p>
                     </div>
-                    <div class="resume-item"><span class="item-arrow"></span>
-                      <h5 class="item-title">Back-End Developer</h5><span class="item-details">Google / 2017 - 2018</span>
-                      <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
-                    </div>
-                    <div class="resume-item"><span class="item-arrow"></span>
-                      <h5 class="item-title">UI/UX Designer</h5><span class="item-details">Discord / 2019 - Present</span>
-                      <p class="item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo repudiandae.</p>
-                    </div>
+                    {% endfor %}
                   </div>
                 </div>
               </div>
@@ -393,46 +322,27 @@
                 </div>
               </div>
               <div class="row">
+                {% for skills in skills %}
+                {% if skills.id %}
                 <div class="col-12 col-md-6">
-                  <div class="single-skill" data-percentage="95">
-                    <div class="skill-info"><span class="skill-name">HTML/CSS</span><span class="skill-percentage"></span></div>
-                    <div class="progress skill-progress">
-                      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="single-skill" data-percentage="80">
-                    <div class="skill-info"><span class="skill-name">Web Design</span><span class="skill-percentage"></span></div>
-                    <div class="progress skill-progress">
-                      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="single-skill" data-percentage="90">
-                    <div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-percentage"></span></div>
+                  <div class="single-skill" data-percentage="{{skills.percent}}">
+                    <div class="skill-info"><span class="skill-name">{{skills.lang}}</span><span class="skill-percentage"></span></div>
                     <div class="progress skill-progress">
                       <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
+                {% else %}
                 <div class="col-12 col-md-6">
-                  <div class="single-skill" data-percentage="90">
-                    <div class="skill-info"><span class="skill-name">React JS</span><span class="skill-percentage"></span></div>
-                    <div class="progress skill-progress">
-                      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="single-skill" data-percentage="95">
-                    <div class="skill-info"><span class="skill-name">Express.js</span><span class="skill-percentage"></span></div>
-                    <div class="progress skill-progress">
-                      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="single-skill" data-percentage="80">
-                    <div class="skill-info"><span class="skill-name">TypeScript</span><span class="skill-percentage"></span></div>
+                  <div class="single-skill" data-percentage="{{skills.percent}}">
+                    <div class="skill-info"><span class="skill-name">{{skills.lang}}</span><span class="skill-percentage"></span></div>
                     <div class="progress skill-progress">
                       <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
+                {% endif %}
+                {% endfor %}
               </div>
             </div>
             <!-- Video section-->
@@ -440,10 +350,9 @@
               <div class="row align-items-center">
                 <div class="col-12 col-lg-6 content-part">
                   <h3 class="video-title">Take a tour of my office</h3>
-                  <p class="video-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia cum quasi assumenda culpa praesentium consectetur voluptatibus expedita. Voluptatem tempore, aspernatur rem facilis, distinctio nemo! Odio velit, nemo dolorem voluptas!</p>
-                  <p class="video-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium qui aspernatur unde mollitia, in laborum.</p>
+                  <p class="video-description">{{office.description}}</p>
                 </div>
-                <div class="col-12 col-lg-6 video-part"><a class="media-lightbox" href="https://www.youtube.com/watch?v=doteMqP6eSc" data-lightbox>
+                <div class="col-12 col-lg-6 video-part"><a class="media-lightbox" href="{{office.image}}" data-lightbox>
                     <div class="embed-responsive embed-responsive-16by9">
                       <div class="embed-responsive-item element-cover-bg"><span class="play-wrapper"><i class="icon ion-md-play"></i></span></div>
                     </div>
@@ -489,53 +398,15 @@
               <!-- Thumbnail list-->
               <div class="portfolio-grid row">
                 <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 design"><a class="portfolio-item" href="{% static 'img/item-1.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-1.jpg' %}">
+                {% for portfolio in portfolio %}
+                <div class="single-item col-6 col-lg-4 {{portfolio.choosing}}"><a class="portfolio-item" href="{{portfolio.image.url}}" data-lightbox>
+                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{{portfolio.image.url}}">
                       <div class="item-content">
-                        <h6 class="content-title">Label Tag Mockup</h6><span class="content-more">More Info</span>
+                        <h6 class="content-title">{{portfolio.title}}</h6><span class="content-more">More Info</span>
                       </div>
                     </div>
                   </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 photos"><a class="portfolio-item" href="{% static 'img/item-2.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-2.jpg' %}">
-                      <div class="item-content">
-                        <h6 class="content-title">3D Bag Mockup</h6><span class="content-more">More Info</span>
-                      </div>
-                    </div>
-                  </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 design"><a class="portfolio-item" href="{% static 'img/item-3.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-3.jpg' %}">
-                      <div class="item-content">
-                        <h6 class="content-title">Modern Bag Design</h6><span class="content-more">More Info</span>
-                      </div>
-                    </div>
-                  </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 brand"><a class="portfolio-item" href="{% static 'img/item-4.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-4.jpg' %}">
-                      <div class="item-content">
-                        <h6 class="content-title">Coffee Cup Design</h6><span class="content-more">More Info</span>
-                      </div>
-                    </div>
-                  </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 brand"><a class="portfolio-item" href="{% static 'img/item-5.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-5.jpg' %}">
-                      <div class="item-content">
-                        <h6 class="content-title">T-Shirt Design</h6><span class="content-more">More Info</span>
-                      </div>
-                    </div>
-                  </a></div>
-                <!-- Single item-->
-                <div class="single-item col-6 col-lg-4 photos"><a class="portfolio-item" href="{% static 'img/item-6.jpg' %}" data-lightbox>
-                    <div class="portfolio-wrapper"><img class="img-fluid" alt="Item" src="{% static 'img/item-6.jpg' %}">
-                      <div class="item-content">
-                        <h6 class="content-title">Packaging Box Mockup</h6><span class="content-more">More Info</span>
-                      </div>
-                    </div>
-                  </a></div>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -565,64 +436,17 @@
             <div class="blog-section single-section">
               <div class="row justify-content-center">
                 <!-- Single post-->
+                {% for blog in blog %}
                 <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{% static 'img/post-1.jpg' %}" alt="Blog post"><span class="content-date">11 Dec, 20</span></a>
+                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{{blog.image.url}}" alt="Blog post"><span class="content-date">{{blog.data}}</span></a>
                     <div class="card-body post-content"><a href="#0">
-                        <h5 class="card-title content-title">Top tools for Photographers</h5>
+                        <h5 class="card-title content-title">{{blog.title}}</h5>
                       </a>
-                      <p class="card-text content-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.</p>
+                      <p class="card-text content-description">{{blog.description}}</p>
                     </div>
                   </div>
                 </div>
-                <!-- Single post-->
-                <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{% static 'img/post-2.jpg' %}" alt="Blog post"><span class="content-date">12 Aug, 20</span></a>
-                    <div class="card-body post-content"><a href="#0">
-                        <h5 class="card-title content-title">Take a tour of my office</h5>
-                      </a>
-                      <p class="card-text content-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Single post-->
-                <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{% static 'img/post-3.jpg' %}" alt="Blog post"><span class="content-date">4 Feb, 20</span></a>
-                    <div class="card-body post-content"><a href="#0">
-                        <h5 class="card-title content-title">How i became a Web Designer</h5>
-                      </a>
-                      <p class="card-text content-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.</p>
-                    </div>
-                  </div>
-                </div><!-- Single post-->
-                <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{% static 'img/post-4.jpg' %}" alt="Blog post"><span class="content-date">11 Dec, 19</span></a>
-                    <div class="card-body post-content"><a href="#0">
-                        <h5 class="card-title content-title">How to improve work performance</h5>
-                      </a>
-                      <p class="card-text content-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Single post-->
-                <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{% static 'img/post-5.jpg' %}" alt="Blog post"><span class="content-date">15 Nov, 19</span></a>
-                    <div class="card-body post-content"><a href="#0">
-                        <h5 class="card-title content-title">How to work from home</h5>
-                      </a>
-                      <p class="card-text content-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Single post-->
-                <div class="col-12 col-sm-8 col-lg-4">
-                  <div class="card single-post"><a class="post-img" href="#0"><img class="card-img-top" src="{% static 'img/post-6.jpg' %}" alt="Blog post"><span class="content-date">8 Aug, 19</span></a>
-                    <div class="card-body post-content"><a href="#0">
-                        <h5 class="card-title content-title">How to enjoy your business trip</h5>
-                      </a>
-                      <p class="card-text content-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas.</p>
-                    </div>
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -675,28 +499,28 @@
                       <li>
                         <div class="media align-items-center"><span class="info-icon"><i class="icon ion-logo-ionic"></i></span>
                           <div class="media-body info-details">
-                            <h6 class="info-type">Name</h6><span class="info-value">Emma Smith</span>
+                            <h6 class="info-type">Name</h6><span class="info-value">{{userinfo.name}} {{userinfo.lastname}}</span>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="media align-items-center"><span class="info-icon"><i class="icon ion-md-map"></i></span>
                           <div class="media-body info-details">
-                            <h6 class="info-type">Location</h6><span class="info-value">4155 Mann Island, Liverpool, United Kingdom.</span>
+                            <h6 class="info-type">Location</h6><span class="info-value">{{userinfo.location}}</span>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="media align-items-center"><span class="info-icon"><i class="icon ion-md-call"></i></span>
                           <div class="media-body info-details">
-                            <h6 class="info-type">Call Me</h6><span class="info-value"><a href="tel:+441632967704">+44 1632 967704</a></span>
+                            <h6 class="info-type">Call Me</h6><span class="info-value"><a href="tel:+441632967704">{{userinfo.phone_number}}</a></span>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="media align-items-center"><span class="info-icon"><i class="icon ion-md-send"></i></span>
                           <div class="media-body info-details">
-                            <h6 class="info-type">Email Me</h6><span class="info-value"><a href="mailto:emma@example.com">emma@example.com</a></span>
+                            <h6 class="info-type">Email Me</h6><span class="info-value"><a href="mailto:{{userinfo.email}}">{{userinfo.email}}</a></span>
                           </div>
                         </div>
                       </li>
